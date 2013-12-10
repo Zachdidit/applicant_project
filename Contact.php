@@ -40,9 +40,9 @@ Class Contact extends AbstractModel
 	function __destruct() {
 		$this->dbCon->close();
 	}
-	// Commit changes
+
 	public function save(){
-		// should set the key somewhere in here
+	
 		if($this->_pk == null){			
 			$query = "INSERT INTO $this->_table (name, email) VALUES('$this->name','$this->email')";
 			$result =  $this->dbCon->query($query);
@@ -86,7 +86,7 @@ Class Contact extends AbstractModel
 			}
 		return $this;
 	}
-	// Select Function also returns column result if key is provided
+	
 	public function getData($key=false){
 				
 		switch ($key){
@@ -112,7 +112,7 @@ Class Contact extends AbstractModel
 		}
 	}
 	
-	// Update function
+	
 	public function setData($arr, $value=false){
 		if(is_array($arr)){
 			$this->_pk = $arr['id'];
