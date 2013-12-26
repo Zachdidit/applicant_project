@@ -4,8 +4,10 @@ require_once("Contact.php");
 error_reporting(E_ERROR | E_WARNING);
 
 $contact = new Contact();
-
 $contact->load(1);
+
+
+
 print_r($contact->getData()); 
 
 // Should print:
@@ -53,4 +55,4 @@ $contact->setData(array(
 		"id" => 1,
 		"name" => "John Doe",
 		"email" => "john@doe.com"
-))->save();
+))->save(); 
